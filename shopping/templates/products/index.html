@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">
+    <img src="media/eshopping.png" width="30" height="30" class="d-inline-block align-top" alt="">shopping</a>
+      <!-- carts link -->
+  <a href="/carts"><img src="media/carts.png" width="40" height="30" class="d-inline-block align-right" style="margin-right:16px;" > </a>
+</nav>
+
+<div class="container" style="padding:0px; margin:10px;">
+  <!-- Products list -->
+  {% if all_products %}
+  <div class="row">
+    {% for product in all_products %}
+    <div class="col-6 col-md-4"><img src="{{product.Product_img.url}}" class="rounded" height="100" width="150">
+      <p class="font-weight-bold">{{product.Product_name}}</p>
+      
+       <textarea rows="2" style="border: 0ch;" >{{product.Product_desc}}</textarea>
+      <br>
+      {{ product.Product_price}}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+{% endblock content %}

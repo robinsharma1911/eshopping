@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">
+    <img src="media/eshopping.png" width="30" height="30" class="d-inline-block align-top" alt="">shopping</a>
+   </nav>
+
+  
+        <div class="container">
+        <div class="form-group">
+        <form action="/logs/" method="POST">
+            {% csrf_token %}
+            
+            {{ loginform    }}
+            <br>
+            <input type="submit" value="Submit" class="btn btn-primary btn-block">
+        </div>
+        </form>
+
+        <a href="/logs/regi">create new account</a>
+        </div>
+
+        {% endblock content %}

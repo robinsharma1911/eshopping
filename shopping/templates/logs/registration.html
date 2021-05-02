@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+  <a class="navbar-brand" href="/">
+    <img src="#" width="30" height="30" class="d-inline-block align-top" alt="">
+    register
+  </a>
+  </nav>
+
+        <div class="container">
+        <form action="/logs/regi/" method="POST">
+            {% csrf_token %}
+            {{ registerform.as_table }}
+            <br>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+
+        <center><a href="/logs">already have account /login here.</a></center>
+        </div>
+        {% endblock content %}
